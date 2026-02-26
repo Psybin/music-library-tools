@@ -13,6 +13,7 @@ specific playback server.
 
 ### Scene Tools
 - Scene release structure and size checks
+- [Scene Tools](scene/README.md)
 
 ## Philosophy
 
