@@ -1,0 +1,17 @@
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Generated test output
+output/
+tmp/
+
+#reports/
