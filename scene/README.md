@@ -7,17 +7,20 @@ Scripts to check integrity of scene releases
 ### `verify-scene-pre.sh`
 Verify all files in a scene directory match the pre in srrDB at https://www.srrdb.com/
 
+### `verify-sfv.sh`
+Verify the SFV of audio files in the release match the scene .sfv
+
 **Usage:**
 - Run from inside the scene release directory:
 
 ```bash
-./path/to/script/verify-scene-pre.sh
+./path/to/script.sh
 ```
 
 - Run from script directory using the -d option:
 
 ```bash
-./verify-scene-pre.sh -d /path/to/release
+./script.sh -d /path/to/release
 ```
 
 **Optional: add to your PATH**
