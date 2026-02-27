@@ -21,11 +21,11 @@ Verify all files in a scene directory match the pre in srrDB at https://www.srrd
 ```
 
 **Optional: add to your PATH**
-- To run the script without specifying its full path, you can add your script directory to your PATH. For example, if your scripts are in ~/bin:
+To run the script without specifying its full path, you can add your script directory to your PATH. For example, if your scripts are in ~/bin:
 
 ```bash
 echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-- Then run as usual from the release directory, or specify path with -d:
+Then run as usual from the release directory, or specify path with -d:
