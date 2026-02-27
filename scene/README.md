@@ -8,7 +8,7 @@ Scripts to check integrity of scene releases
 Verify all files in a scene directory match the pre in srrDB at https://www.srrdb.com/
 
 ### `verify-sfv.sh`
-Verify the SFV of audio files in the release match the scene .sfv
+Verify the SFV of audio files in the release match the scene pre .sfv
 
 **Usage:**
 - Run from inside the scene release directory:
@@ -24,7 +24,7 @@ Verify the SFV of audio files in the release match the scene .sfv
 ```
 
 **Optional: add to your PATH**
-- To run the script without specifying its full path, you can add your script directory to your PATH. For example, if your scripts are in ~/bin:
+- To run a script via filename alone without its full path, add your script directory to your PATH. Example, if your scripts are in ~/bin:
 
 ```bash
 echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
