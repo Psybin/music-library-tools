@@ -31,4 +31,4 @@ echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Then run as usual from the release directory, or specify path with -d:
+Then run as usual from the release directory, or specify path with -d.
