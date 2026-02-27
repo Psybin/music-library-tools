@@ -1,32 +1,46 @@
 #!/usr/bin/env bash
+# set -euo pipefail
 
-# Default directory
-DIR="."
-VERBOSE=0
+# Default directory: current dir (PWD)
+DIR="$PWD"
 
 # --- getopt parsing ---
-OPTS=$(getopt -o d:v --long dir:,verbose -n 'checkcrc' -- "$@")
-if [ $? != 0 ] ; then echo "Failed parsing options." >&2 ; exit 1 ; fi
+OPTS=$(getopt -o d: --long dir: -n 'checkcrc' -- "$@")
+if [ $? != 0 ] ; then
+	echo "Failed parsing options." >&2
+	exit 1
+fi
 eval set -- "$OPTS"
 
 while true; do
     case "$1" in
-        -d|--dir ) DIR="$2"; shift 2 ;;
-        -v|--verbose ) VERBOSE=1; shift ;;
-        -- ) shift; break ;;
-        * ) break ;;
+        -d|--dir )
+			DIR="$2"
+			shift 2
+			;;
+        -- )
+			shift
+			break
+			;;
+        * )
+			break
+			;;
     esac
 done
 
-# Normalize directory
-DIR="${DIR%/}"      # Remove trailing slash
-if [ "$DIR" = "." ]; then
-    BASENAME=$(basename "$PWD")  # Use current working directory name
-else
-    BASENAME=$(basename "$DIR")
+# Normalize directory (remove trailing slash)
+DIR="${DIR%/}"
+
+# If DIR is still ".", use current working directory
+if [ "$DIR" == "." ]; then
+    DIR="$PWD"
 fi
 
-echo "Checking release: $BASENAME"
+# Release name is the basename of the directory
+BASENAME=$(basename "$DIR")
+
+# Print which directory we're checking
+echo "Checking release: $BASENAME ($DIR)"
 
 # --- Fetch JSON from SRRDB API ---
 URL="https://api.srrdb.com/v1/details/${BASENAME}"
