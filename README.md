@@ -8,6 +8,10 @@ specific playback server.
 
 ## Current Tools
 
+### General Utilities
+- Tools for dealing with names, tags, and other general uses
+- [General Utilities](utils/)
+
 ### FLAC Utilities
 - None yet
 
